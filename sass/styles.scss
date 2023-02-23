@@ -1,0 +1,391 @@
+@use 'variables';
+@use 'initials';
+@use 'mixins';
+
+.main-container {
+    width: 100%;
+    &__hero {
+        height: 700px;
+        background-image: variables.$background-linear;
+    }
+    &__info {
+        max-width: 500px;
+        margin: auto;
+        text-align: center;
+        color: white;
+        height: 650px;
+        padding-top: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__text-small {
+        font-size: 0.8em;
+        margin-bottom: 10px;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        font-family: 'Work Sans', sans-serif;
+        padding: 0px 10px;
+    }
+    &__tittle {
+        font-size: 2.4em;
+        padding: 0px 10px;
+    }
+    &__text {
+        min-width: 200px;
+        margin: auto;
+        font-weight: 200;
+        font-family: 'Work Sans', sans-serif;
+        margin-bottom: 20px;
+        padding: 0px 10px;
+    }
+    &__button {
+        @include mixins.button(120px, 0.7em)
+    }
+    &__image {
+        display: flex;
+        justify-content: center;
+    }
+    &__phone-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 210px;
+        height: auto;
+    }   
+    @media (min-width: 400px){
+        &__phone-img {
+            width: 260px;
+        }
+    }
+}
+
+
+
+.header {
+    max-width: 1200px;
+    padding: 10px 15px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+    &__circle-logo {
+        width: 25px;
+        height: 25px;
+        background-color: variables.$white;
+        border-radius: 100px;
+    }
+    &__text-logo {
+        font-size: 1.2em;
+        color: variables.$white;
+        font-weight: 300;
+        font-family: 'Work Sans', sans-serif;
+    }
+    &__ul{
+        display: flex;
+        list-style: none;
+        font-size: 0.5em;
+        gap: 10px;
+        color: variables.$white;
+        font-weight: lighter;
+        display: none;
+    }
+    &__button-order {
+        @include mixins.button(100px, 0.7em);
+    }
+}
+
+.read-more {
+    margin-top: 40px;
+    position: relative;
+    width: 100%;
+    &__title {
+        font-size: 0.9em;
+        text-align: center;
+        padding: 0px 10px;
+        margin-bottom: 15px
+    }
+    &__button {
+        @include mixins.button(80px, 0.6em);
+        display: block;
+        margin: auto;
+    }
+}
+
+.features {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 100%;
+    &__text {
+        color: #000;
+        background: #fff;
+        position: relative;
+        text-align: center;
+        font-size: 0.8em;
+        margin-bottom: 10px;
+    }
+        
+    &__text:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: variables.$background-linear;
+        mix-blend-mode: screen; 
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &__title {
+        text-align: center;
+        font-size: 1.2em;
+        padding: 0px 10px;
+        margin-bottom: 30px;
+    }
+    &__div-card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0px 10px;
+        gap: 30px;
+        align-items: center;
+        @media (min-width: 600px){
+            flex-wrap: wrap;
+            flex-direction: row;
+            margin: auto;
+        }
+
+        &__card {
+            width: 260px;
+            height: 350px;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px 2px rgb(107, 107, 107);
+            &-img {
+                border-radius: 15px;
+                width: 240px;
+                height: 200px;
+            }
+            &-title {
+                text-align: center;
+                margin: 15px 0px;
+                font-weight: 300;
+            }
+            &-text {
+                text-align: center;
+                color: variables.$grey;
+            }
+        }
+    }
+}
+
+.features__div-card__card:nth-child(2){
+    background-image: variables.$background-linear;
+    color: white;
+    & p {
+        color: rgb(223, 219, 219);
+        font-weight: 200;
+    }
+}
+
+.how-works {
+    max-width: 500px;
+    display: flex;
+    margin: auto;
+    background-image: variables.$background-linear;
+    &__info {
+        padding: 20px;
+        &__small-text {
+            color: #000;
+            position: relative;
+            text-align: center;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+        }
+        &__works-title{
+            color: variables.$black;
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            text-align: center;
+            color: variables.$white;
+        }
+    }
+}
+
+.info__div-works {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
+    &__circle {
+        display: grid;
+        place-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 100px;
+        background-color: variables.$white;
+    }
+    &__text {
+        width: 70%;
+        font-weight: 500;
+    }
+}
+
+.info__div-works__circle i{
+    color: rgb(233, 123, 79);
+    font-size: 1.1em;
+}
+
+.testimonials {
+    margin-top: 100px;
+    width: 100%;
+    &__text-small {
+        color: #000;
+        background: #fff;
+        position: relative;
+        text-align: center;
+        font-size: 0.8em;
+        margin-bottom: 10px;
+    }
+        
+    &__text-small:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: variables.$background-linear;
+        mix-blend-mode: screen; 
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &__title{
+        color: variables.$black;
+        text-align: center;
+        margin-bottom: 20px;
+        padding: 0px 20px;
+    }
+}
+
+.testimonials-container {
+    max-width: 500px;
+    padding: 0px 20px;
+    margin: auto;
+    &__comment{
+        width: 100%;
+        height: 135px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+}
+
+.header-comment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(217, 219, 217);
+    padding-bottom: 10px;
+    &__info-person {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    &__image {
+        width: 50px;
+    }
+    &__name {
+        font-weight: 600;
+    }
+    &__rank {
+        color: rgb(255, 217, 0);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    &__rank-number {
+        color: rgb(153, 147, 147);
+        font-size: 1.1em;
+        font-family: variables.$fontlight;
+        font-weight: 400;
+        letter-spacing: 2px;
+    }
+    &__text {
+        font-size: 0.9em;
+        margin-top: 10px;
+        color: rgb(114, 114, 114);
+        font-weight: 400;
+    }
+}
+
+
+.map {
+    margin-top: 100px;
+    &__image-map {
+        margin-top: 50px;
+        width: 100%;
+        height: 300px;
+        background-image: url(/images/map.PNG);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+    &__title {
+        font-size: 1.8em;
+        max-width: 500px;
+        text-align: center;
+        color: variables.$black;
+        padding: 0px 20px;
+        margin: auto;
+    }
+}
+
+.footer {
+    margin-top: 100px;
+    width: 100%;
+    background-color: rgb(51, 51, 51);
+    &__div-footer {
+        align-items: center;
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 60px 20px 20px 20px;
+    }
+    &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    &__text-resume{
+        font-family: variables.$fontlight;
+        font-weight: 400;
+        font-size: 0.8em;
+        color: rgb(129, 128, 128);
+    }
+    &__list {
+        margin-bottom: 30px;
+        &-title{
+            font-family: variables.$fontlight;
+            font-weight: 400;
+            margin-bottom: 10px;
+            color: variables.$white;
+        }
+    }
+    &__list-ul {
+        list-style: none;
+    }
+    
+}
+
+.footer__list-li a {
+    color: rgb(129, 128, 128);
+    text-decoration: none;
+}
