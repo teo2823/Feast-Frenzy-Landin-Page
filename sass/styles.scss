@@ -9,7 +9,6 @@
         background-image: variables.$background-linear;
     }
     &__info {
-        max-width: 500px;
         margin: auto;
         text-align: center;
         color: white;
@@ -18,6 +17,11 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        max-width: 400px;
+        @media (min-width: 750px){
+            max-width: 700px;
+
+        }
     }
     &__text-small {
         font-size: 0.8em;
@@ -30,6 +34,10 @@
     &__tittle {
         font-size: 2.4em;
         padding: 0px 10px;
+        @media (min-width: 750px){
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
     }
     &__text {
         min-width: 200px;
@@ -43,21 +51,21 @@
         @include mixins.button(120px, 0.7em)
     }
     &__image {
+        width: 100%;
+        height: 50%;
         display: flex;
         justify-content: center;
+        align-items: flex-end
     }
     &__phone-img {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 210px;
-        height: auto;
-    }   
-    @media (min-width: 400px){
-        &__phone-img {
-            width: 260px;
+        @include mixins.img-hero(url(/images/single-phone.png), 260px, 400px);
+        @media (max-width: 280px){
+            height: 150px;
         }
-    }
+        @media (min-width: 750px){
+            @include mixins.img-hero(url(./images/three-phones.png), 400px, 620px)
+        }
+    }   
 }
 
 
@@ -87,19 +95,90 @@
         font-weight: 300;
         font-family: 'Work Sans', sans-serif;
     }
+    &__nav {
+        @media (max-width: 750px){
+            width: 0;
+            height: 100vh;
+            background-color: rgb(247, 169, 125);
+            position: fixed;
+            transition: all 200ms linear;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            i {
+                display: none;
+            }
+        }
+    }
     &__ul{
-        display: flex;
+        position: absolute;
         list-style: none;
-        font-size: 0.5em;
-        gap: 10px;
+        font-size: 0.8em;
+        padding: 40px 20px;
+        width: 100%;
+        gap: 13px;
+        height: 50px;
         color: variables.$white;
-        font-weight: lighter;
-        display: none;
+        font-weight: 300;
+        font-family: variables.$fontlight;
+
+        @media (max-width: 750px){
+            font-size: 1.2em;
+        }
+
+        @media (min-width: 750px){
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+        }
     }
     &__button-order {
-        @include mixins.button(100px, 0.7em);
+        @include mixins.button(80px, 0.6em);
+        margin-right: 35px;
+        @media (max-width: 320px){
+            display: none;
+        }
+        @media (min-width: 750px){
+            margin-right: 0;
+            @include mixins.button(100px, 0.8em);
+        }
+    }
+    &__nav-items {
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+    &__blur-content {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    &__icon-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: flex-end;
+        padding: 0px 15px;
+        align-items: center;
+        @media (min-width: 750px){
+            display: none;
+        }
     }
 }
+
+i {
+    font-size: 1.4em;
+}
+
 
 .read-more {
     margin-top: 40px;

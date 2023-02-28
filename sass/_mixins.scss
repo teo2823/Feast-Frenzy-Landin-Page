@@ -8,3 +8,15 @@
     background-color: variables.$black;
     color: variables.$white;
 }
+
+@mixin img-hero($photo, $height, $width){
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: $width;
+    height: $height;
+    background-image: $photo;
+    background-position: center bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
