@@ -22,7 +22,10 @@
             max-width: 700px;
         }
         @media (min-width: 1000px){
-            max-width: 850px;
+            max-width: 1000px;
+        }
+        @media (min-width: 1300px){
+            max-width: 1200px;
         }
     }
     &__text-small {
@@ -32,17 +35,24 @@
         letter-spacing: 1.5px;
         font-family: 'Work Sans', sans-serif;
         padding: 0px 10px;
+        @media (min-width: 1000px){
+            font-size: 1em;
+        }
     }
     &__tittle {
         font-size: 2.4em;
         padding: 0px 10px;
-        line-height: 55px;
+        line-height: 50px;
+        margin-bottom: 10px;
         @media (min-width: 750px){
             font-size: 3em;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
         @media (min-width: 1200px){
-            font-size: 4em;
+            font-size: 4.5em;
+            line-height: 80px;
+            margin-bottom: 15px;
+            padding: 0 20px;
         }
     }
     &__text {
@@ -52,9 +62,10 @@
         font-family: 'Work Sans', sans-serif;
         margin-bottom: 20px;
         padding: 0px 10px;
+        font-size: 0.8em;
         @media (min-width: 750px){
             max-width: 500px;
-            font-size: 1.1em;
+            font-size: 0.9em;
         }
     }
     &__button {
@@ -208,6 +219,11 @@ i {
             font-size: 1.5em;
             max-width: 600px;
         }
+        @media (min-width: 1200px){
+            font-size: 2.5em;
+            max-width: 1200px;
+            margin-bottom: 20px;
+        }
     }
     &__button {
         @include mixins.button(80px, 0.6em);
@@ -215,6 +231,10 @@ i {
         margin: auto;
         @media (min-width: 750px){
             @include mixins.button(110px, 0.8em);
+        }
+        @media (min-width: 1200px){
+            @include mixins.button(150px, 1em);
+            height: 50px;
         }
     }
 }
@@ -256,6 +276,10 @@ i {
             font-size: 1.5em;
             width: 500px;
         }
+        @media (min-width: 1200px){
+            font-size: 2.5em;
+            width: 800px;
+        }
     }
     &__div-card{
         display: flex;
@@ -269,9 +293,9 @@ i {
             flex-direction: row;
             margin: auto;
         }
-        @media (min-width: 1100px){
+        @media (min-width: 1200px){
             justify-content: space-between;
-            max-width: 1000px;
+            max-width: 1200px;
         }
 
         &__card {
@@ -316,8 +340,12 @@ i {
     gap: 30px;
     @media (min-width: 750px){
         display: grid;
-        max-width: 1000px;
         grid-template-columns: 1fr 1fr;
+        max-width: 1000px;
+    }
+    @media (min-width:1200px) {
+        height: 630px;
+        max-width: 1200px;
     }
     &__image{
         background-image: url(./images/man.PNG);
@@ -328,9 +356,15 @@ i {
         margin-left: 20px;
         height: 100%;
         border-radius: 40px;
+        @media (min-width:1200px){
+            width: 450px;
+        }
     }
     &__info {
         padding: 20px;
+        @media (min-width: 1000px){
+            padding-left: 0px;
+        }
         &__small-text {
             color: #000;
             position: relative;
@@ -340,6 +374,7 @@ i {
             @media (min-width: 750px){
                 text-align: start;
             }
+
         }
         &__works-title{
             color: variables.$black;
@@ -351,6 +386,9 @@ i {
                 text-align: start;
                 color: variables.$black;
                 font-size: 1.7em;
+            }
+            @media (min-width: 1200px){
+                font-size: 2.5em;
             }
         }
     }
@@ -370,6 +408,9 @@ i {
     align-items: center;
     margin-bottom: 20px;
     gap: 20px;
+    @media (min-width: 1200px){
+        margin-bottom: 30px;
+    }
     &__circle {
         display: grid;
         place-content: center;
@@ -377,11 +418,18 @@ i {
         height: 50px;
         border-radius: 100px;
         background-color: variables.$white;
+        @media (min-width: 1200px){
+            width: 60px;
+            height: 60px;
+        }
     }
+
     &__text {
         width: 70%;
         font-weight: 500;
-
+        @media (min-width: 1200px){
+            font-size: 1.3em;
+        }
     }
 }
 
@@ -418,6 +466,12 @@ i {
         text-align: center;
         margin-bottom: 20px;
         padding: 0px 20px;
+        @media (min-width: 1200px){
+            font-size: 2.5em;
+            width: 800px;
+            margin: auto;
+            padding-bottom: 60px;
+        }
     }
 }
 
@@ -425,6 +479,12 @@ i {
     max-width: 500px;
     padding: 0px 20px;
     margin: auto;
+    @media (min-width: 1200px){
+        max-width: 1200px;
+        gap: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
     &__comment{
         width: 100%;
         height: 135px;
@@ -492,6 +552,12 @@ i {
         color: variables.$black;
         padding: 0px 20px;
         margin: auto;
+        @media (min-width: 1200px){
+            font-size: 2.5em;
+            width: 800px;
+            margin: auto;
+            padding-bottom: 60px;
+        }
     }
 }
 
@@ -504,13 +570,26 @@ i {
         display: flex;
         flex-direction: column-reverse;
         padding: 60px 20px 20px 20px;
+        @media (min-width: 550px){
+            flex-direction: row;
+            gap: 50px;
+            justify-content: space-between;
+            align-items: start;
+            max-width: 1200px;
+            margin: auto;
+        }
     }
     &__logo {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 10px;
+        margin-top: 30px;
         margin-bottom: 15px;
+        @media(min-width: 550px){
+            display: flex;
+            margin-top: 0;
+        }
     }
     &__text-resume{
         font-family: variables.$fontlight;
@@ -529,6 +608,19 @@ i {
     }
     &__list-ul {
         list-style: none;
+    }
+    &__lists {
+        @media (min-width: 550px){
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        @media (min-width: 800px){
+            min-width: 550px;
+        }
+    }
+    &__first {
+        width: 200px;
     }
     
 }
